@@ -11,35 +11,35 @@
 
 ### 🚀 About Me
 
-- 🎓 **Computer Science Graduate** dengan fokus pada Web Security dan Machine Learning.
-- 🛡️ Peneliti **Machine Learning-based Web Application Firewalls (WAF)** menggunakan Tree-Based Classifiers seperti Decision Tree, Random Forest, dan XGBoost.
-- 💻 Berpengalaman dalam **Laravel Framework** (Full-stack architecture) dan pengembangan Sistem Informasi Desa.
-- ⚙️ Windows Power User & Automation enthusiast.
-- 🔭 Memiliki portofolio personal bernama **"JidaiIsHere"**.
+- 🎓 **Lulusan Ilmu Komputer** dengan fokus riset pada keamanan web dan kecerdasan buatan.
+- 🛡️ Peneliti **Web Application Firewall (WAF) berbasis Machine Learning** menggunakan Tree-Based Classifiers (Decision Tree, Random Forest, & XGBoost).
+- 💻 Ahli dalam pengembangan full-stack menggunakan **Laravel Framework** dan ekosistem modern.
+- ⚙️ Windows Power User yang gemar melakukan otomatisasi sistem dan optimasi Windows.
+- 🔭 Founder & Developer dari **JidaiIsHere**, sebuah platform portofolio personal.
 
 ---
 
-### 💻 Tech Stack
+### 💻 Keahlian Teknis
 
-**Web Development:**
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+**Full-Stack Development:**
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-**Data Science & Cybersecurity:**
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-%23F37626.svg?style=for-the-badge&logo=jupyter&logoColor=white)
-
----
-
-### 📁 Featured Projects
-
-| Project                 | Description                                                                          | Tech Stack                          |
-| :---------------------- | :----------------------------------------------------------------------------------- | :---------------------------------- |
-| **WAF-ML Model**        | Implementasi model Machine Learning untuk mencegah serangan siber pada aplikasi web. | `Python`, `XGBoost`, `Scikit-learn` |
-| **Village Info System** | Sistem informasi desa dengan multi-authentication dan manajemen data penduduk.       | `Laravel 12`, `PHP`, `MySQL`        |
-| **JidaiIsHere**         | Website portofolio personal untuk memamerkan branding dan karya.                     | `Vite`, `Tailwind CSS`              |
+**Data Science & Security:**
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-%23F37626.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 
 ---
 
-### 📊 GitHub Stats & Activity
+### 📁 Proyek Utama
+
+| Proyek                  | Deskripsi                                                            | Status     | Tech Stack            |
+| :---------------------- | :------------------------------------------------------------------- | :--------- | :-------------------- |
+| **Model WAF-ML**        | Implementasi ML untuk deteksi serangan siber pada dataset CSIC 2010. | Completed  | `Python`, `XGBoost`   |
+| **Village Info System** | Sistem manajemen desa dengan multi-auth dan laporan PDF otomatis.    | Production | `Laravel 12`, `MySQL` |
+| **JidaiIsHere**         | Portofolio branding personal dan showcase hasil kerja.               | Active     | `Vite`, `Tailwind`    |
+
+---
+
+### 📊 Statistik GitHub
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark&count_private=true" width="48%" />
