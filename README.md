@@ -40,11 +40,11 @@
 ---
 
 ### 📊 Statistik GitHub
-
+<!-- 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark&count_private=true" width="48%" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jidai01&layout=compact&theme=dark" width="48%" />
-</p>
+</p> -->
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=jidai01&theme=github-compact" width="100%" />
