@@ -1,18 +1,36 @@
-name: Recent Activity Update
+name: Update Profile README
+
 on:
   schedule:
-    - cron: "0 * * * *"
-  workflow_dispatch:
+    - cron: "0 * * * *" # Berjalan setiap jam
+  workflow_dispatch: # Tombol manual
+
 jobs:
-  update-readme:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v3
+
+      # Langkah 1: Update Recent Activity
       - uses: jamesgeorge007/github-activity-readme@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           COMMIT_MSG: "⚡ Update recent activity"
           MAX_LINES: 5
+
+      # Langkah 2: Update Last Updated Date
+      - name: Update Last Updated Date
+        run: |
+          DATE=$(date +'%Y-%m-%d')
+          sed -i "//,//c\\n<i>Last updated on: $DATE<\/i>\n" README.md
+
+      # Langkah 3: Push Perubahan Tanggal
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update last updated date" && git push)
