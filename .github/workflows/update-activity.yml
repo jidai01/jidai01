@@ -27,41 +27,45 @@ jobs:
           python3 << 'EOF'
           import os
 
-          # Definisikan Tag Penanda (Wajib sesuai dengan di README.md)
-          START_ACT, END_ACT = "", ""
-          START_DATE, END_DATE = "", ""
+          # Definisikan Tag Penanda (INI HARUS SAMA DENGAN DI README.MD)
+          START_ACT = ""
+          END_ACT = ""
+          START_DATE = ""
+          END_DATE = ""
 
-          # Ambil data aktivitas
+          # 1. Ambil data aktivitas dari file sementara
           activity_content = "*Belum ada aktivitas terbaru.*"
           if os.path.exists('activity.txt'):
               with open('activity.txt', 'r') as f:
                   content = f.read().strip()
-                  if content: activity_content = content
+                  if content: 
+                      activity_content = content
 
-          # Baca README
+          # 2. Baca file README.md
           if not os.path.exists('README.md'):
-              print("README.md tidak ditemukan!")
+              print("File README.md tidak ditemukan!")
               exit(1)
-
           with open('README.md', 'r') as f:
               readme = f.read()
 
-          # Update Aktivitas
+          # 3. Update bagian Aktivitas
           if START_ACT in readme and END_ACT in readme:
-              parts = readme.split(START_ACT)
-              after_parts = parts[1].split(END_ACT)
-              readme = parts[0] + START_ACT + "\n" + activity_content + "\n" + END_ACT + after_parts[1]
+              before = readme.split(START_ACT)[0]
+              after = readme.split(END_ACT)[1]
+              readme = f"{before}{START_ACT}\n{activity_content}\n{END_ACT}{after}"
           else:
-              print("Tag Aktivitas tidak ditemukan di README!")
+              print("Tag Aktivitas tidak ditemukan di README.md")
 
-          # Update Tanggal
+          # 4. Update bagian Tanggal
           date_now = os.environ.get('DATE', 'Unknown Date')
           if START_DATE in readme and END_DATE in readme:
-              parts = readme.split(START_DATE)
-              after_parts = parts[1].split(END_DATE)
-              readme = parts[0] + START_DATE + "\n<i>Last updated on: " + date_now + "</i>\n" + END_DATE + after_parts[1]
+              before = readme.split(START_DATE)[0]
+              after = readme.split(END_DATE)[1]
+              readme = f"{before}{START_DATE}\n<i>Last updated on: {date_now}</i>\n{END_DATE}{after}"
+          else:
+              print("Tag Tanggal tidak ditemukan di README.md")
 
-          # Simpan hasil akhir
+          # 5. Simpan kembali ke README.md
           with open('README.md', 'w') as f:
               f.write(readme)
           EOF
