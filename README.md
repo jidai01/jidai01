@@ -3,7 +3,6 @@
 **Full-stack Developer | Cyber Security Enthusiast | ML Researcher**
 
 <p align="left">
-  <!-- <a href="https://linkedin.com/in/jidai01"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> -->
   <a href="mailto:lopesdacruzjeray@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
@@ -11,7 +10,7 @@
 
 ### 🚀 About Me
 
-- 🎓 **Computer Science Graduate** with a strong focus on Web Security.
+- 🎓 **Computer Science Graduate** with a focus on Web Security.
 - 🛡️ Researcher of **Machine Learning-based Web Application Firewalls (WAF)** using Tree-Based Classifiers.
 - 💻 Expert in **Laravel Framework** & Full-stack architecture.
 - ⚙️ Windows Power User & Automation enthusiast.
@@ -40,12 +39,8 @@
 ### 📊 In-Depth Analytics:
 
 <p align="center">
-  ### 📊 GitHub Stats:
-
-  ![Jidai's GitHub Stats](https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark)
-
-  ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jidai01&layout=compact&theme=dark)
-
+  <img src="https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark&count_private=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jidai01&layout=compact&theme=dark" width="48%" />
 </p>
 
 <p align="center">
