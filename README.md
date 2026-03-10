@@ -72,5 +72,5 @@
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=jidai01&color=0077B5&style=flat-square&label=PROFILE+VIEWS" alt="jidai01" />
   <br/>
-  <i>Last updated on Mar 10, 2026</i>
-</p>
+  <i>Last updated on: 2026-03-10</i>
+  </p>
