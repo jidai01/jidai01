@@ -1,12 +1,10 @@
 name: Recent Activity Update
 on:
   schedule:
-    - cron: '0 * * * *' # Berjalan otomatis setiap jam
+    - cron: "0 * * * *"
   workflow_dispatch:
-
 jobs:
   update-readme:
-    name: Update Activity
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -16,5 +14,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          COMMIT_MSG: "chore: update recent activity"
-          MAX_LINES: 8
+          COMMIT_MSG: "⚡ Update recent activity"
+          MAX_LINES: 5
