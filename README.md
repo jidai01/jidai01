@@ -65,7 +65,7 @@
 | Project                 | Description                                                        | Status     | Tech                     |
 | :---------------------- | :----------------------------------------------------------------- | :--------- | :----------------------- |
 | **WAF-ML Research**     | Tree-based models (XGBoost/RandomForest) to prevent cyber attacks. | Completed  | `Python`, `Scikit-Learn` |
-| **Village Info System** | Multi-auth system for residents and administrators.                | Production | `Laravel 11`, `MySQL`    |
+| **Village Info System** | Multi-auth system for residents and administrators.                | Production | `Laravel 12`, `MySQL`    |
 | **Portfolio**           | Personal branding and showcase site "JidaiIsHere".                 | Active     | `Vite`, `Tailwind`       |
 
 ---
