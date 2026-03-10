@@ -3,8 +3,8 @@
 **Full-stack Developer | Cyber Security Enthusiast | ML Researcher**
 
 <p align="left">
-  <a href="https://linkedin.com/in/jidai01"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:jidai.work@example.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <!-- <a href="https://linkedin.com/in/jidai01"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> -->
+  <a href="mailto:lopesdacruzjeray@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
 ---
@@ -40,8 +40,12 @@
 ### 📊 In-Depth Analytics:
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark&rank_icon=github&display_format=v2&count_private=true" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jidai01&layout=compact&theme=dark" width="48%" />
+  ### 📊 GitHub Stats:
+
+  ![Jidai's GitHub Stats](https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark)
+
+  ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jidai01&layout=compact&theme=dark)
+
 </p>
 
 <p align="center">
