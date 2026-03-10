@@ -1,27 +1,29 @@
 # Hi, I'm Jidai! 👋
 
-**Web Developer | Computer Science Graduate | ML Researcher**
+**Full-stack Developer | Cyber Security Enthusiast | ML Researcher**
 
 <p align="left">
-  <a href="https://linkedin.com/in/username-kamu"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:email-kamu@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://linkedin.com/in/jidai01"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="mailto:jidai.work@example.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
 ---
 
 ### 🚀 About Me
 
-- 🎓 **Fresh Graduate** in Computer Science with a focus on Cyber Security.
-- 💻 Specialized in **Full-stack Web Development** (Laravel, PHP, Vue/React).
-- 🛡️ Researcher in **Machine Learning-based Web Application Firewalls (WAF)**.
-- ⚙️ Passionate about system optimization and automation.
-- 🔭 Currently working on: Village Information System & Security Research.
+- 🎓 **Computer Science Graduate** with a strong focus on Web Security.
+- 🛡️ Researcher of **Machine Learning-based Web Application Firewalls (WAF)** using Tree-Based Classifiers.
+- 💻 Expert in **Laravel Framework** & Full-stack architecture.
+- ⚙️ Windows Power User & Automation enthusiast.
+- 🔭 Developed: **Village Information System** with Multi-auth and resident management.
 
 ---
 
-### 🏆 GitHub Trophies
+### 🏆 Achievements & Trophies
 
-![](https://github-profile-trophy.vercel.app/?username=jidai01&theme=onedark&column=7&margin-w=15&margin-h=15&no-bg=true)
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=jidai01&theme=onedark&column=7&margin-w=15&margin-h=15&no-bg=true" width="100%" />
+</p>
 
 ---
 
@@ -30,15 +32,15 @@
 **Web Development:**
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-**Data Science & Security:**
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Kali](https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white)
+**Data Science & Cybersecurity:**
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Kali](https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-%23F37626.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 
 ---
 
-### 📊 GitHub Stats:
+### 📊 In-Depth Analytics:
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark&rank_icon=github&display_format=v2" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=jidai01&show_icons=true&theme=dark&rank_icon=github&display_format=v2&count_private=true" width="48%" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jidai01&layout=compact&theme=dark" width="48%" />
 </p>
 
@@ -46,7 +48,7 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=jidai01&theme=dark" width="100%" />
 </p>
 
-### 📈 Contribution Graph
+### 📈 Weekly Coding Activity
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=jidai01&theme=github-compact" width="100%" />
@@ -56,17 +58,20 @@
 
 ### 🕒 Recent Activity
 
-<!-- ## _Belum ada aktivitas terbaru yang terdeteksi (Pastikan GitHub Actions sudah aktif)._ -->
+---
 
 ### 📁 Featured Projects
 
-| Project         | Description                                  | Tech Stack     |
-| :-------------- | :------------------------------------------- | :------------- |
-| **WAF-ML**      | Web Application Firewall using Scikit-Learn. | Python, PHP    |
-| **Village-App** | Integrated Village Information System.       | Laravel, MySQL |
+| Project                 | Description                                                        | Status     | Tech                     |
+| :---------------------- | :----------------------------------------------------------------- | :--------- | :----------------------- |
+| **WAF-ML Research**     | Tree-based models (XGBoost/RandomForest) to prevent cyber attacks. | Completed  | `Python`, `Scikit-Learn` |
+| **Village Info System** | Multi-auth system for residents and administrators.                | Production | `Laravel 11`, `MySQL`    |
+| **Portfolio**           | Personal branding and showcase site "JidaiIsHere".                 | Active     | `Vite`, `Tailwind`       |
 
 ---
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=jidai01&color=blue&style=flat-square&label=PROFILE+VIEWS" alt="jidai01" />
+  <img src="https://komarev.com/ghpvc/?username=jidai01&color=0077B5&style=flat-square&label=PROFILE+VIEWS" alt="jidai01" />
+  <br/>
+  <i>Last updated on Mar 10, 2026</i>
 </p>
