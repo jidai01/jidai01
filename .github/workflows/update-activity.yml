@@ -40,7 +40,7 @@ jobs:
           with open('README.md', 'r') as f:
               readme = f.read()
 
-          # Update Aktivitas
+          # Update Aktivitas (Variabel ini TIDAK BOLEH kosong)
           start_act = ""
           end_act = ""
           if start_act in readme and end_act in readme:
@@ -48,7 +48,7 @@ jobs:
               after = readme.split(end_act)[1]
               readme = f"{before}{start_act}\n{activity_content}\n{end_act}{after}"
 
-          # Update Tanggal
+          # Update Tanggal (Variabel ini TIDAK BOLEH kosong)
           date_now = os.environ.get('DATE', 'Unknown Date')
           start_date = ""
           end_date = ""
