@@ -15,8 +15,9 @@ jobs:
 
       - name: Fetch and Process Activity
         run: |
+          # Mengambil data dan memformatnya
           curl -s "https://api.github.com/users/jidai01/events/public" | \
-          jq -r '.[:5] | .[] | "- \(.type | sub("Event$"; "")) di [\(.repo.name)](https://github.com/\(.repo.name)) (\(.created_at | split("T")[0]))"' > activity.txt
+          jq -r '.[:5] | .[] | "- \(.type | sub("Event$"; "")) di [\(.repo.name)](https://github.com/\(.repo.name)) (\(.created_at | split("T")[0]))"' > activity.txt || echo "" > activity.txt
           echo "DATE=$(date +'%d %B %Y')" >> $GITHUB_ENV
 
       - name: Write to README using Python
@@ -24,30 +25,37 @@ jobs:
           python3 << 'EOF'
           import os
 
+          # Definisikan Tag Penanda
+          START_ACT, END_ACT = "", ""
+          START_DATE, END_DATE = "", ""
+
+          # Ambil data aktivitas
           activity_content = "*Belum ada aktivitas terbaru.*"
           if os.path.exists('activity.txt'):
               with open('activity.txt', 'r') as f:
                   content = f.read().strip()
                   if content: activity_content = content
 
+          # Baca README
           with open('README.md', 'r') as f:
               readme = f.read()
 
-          # Update Aktivitas - Tag ini harus ada di README
-          start_act, end_act = "", ""
-          if start_act in readme and end_act in readme:
-              before = readme.split(start_act)[0]
-              after = readme.split(end_act)[1]
-              readme = f"{before}{start_act}\n{activity_content}\n{end_act}{after}"
+          # Update Aktivitas
+          if START_ACT in readme and END_ACT in readme:
+              parts = readme.split(START_ACT)
+              after_parts = parts[1].split(END_ACT)
+              readme = parts[0] + START_ACT + "\n" + activity_content + "\n" + END_ACT + after_parts[1]
+          else:
+              print("Tag Aktivitas tidak ditemukan!")
 
-          # Update Tanggal - Tag ini harus ada di README
+          # Update Tanggal
           date_now = os.environ.get('DATE', 'Unknown Date')
-          start_date, end_date = "", ""
-          if start_date in readme and end_date in readme:
-              before = readme.split(start_date)[0]
-              after = readme.split(end_date)[1]
-              readme = f"{before}{start_date}\n<i>Last updated on: {date_now}</i>\n{end_date}{after}"
+          if START_DATE in readme and END_DATE in readme:
+              parts = readme.split(START_DATE)
+              after_parts = parts[1].split(END_DATE)
+              readme = parts[0] + START_DATE + "\n<i>Last updated on: " + date_now + "</i>\n" + END_DATE + after_parts[1]
 
+          # Simpan
           with open('README.md', 'w') as f:
               f.write(readme)
           EOF
@@ -57,4 +65,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update activity and date" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update profile" && git push)
