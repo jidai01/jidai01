@@ -14,13 +14,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Fetch and Process Activity
-        id: process
         run: |
-          # Ambil 5 aktivitas terbaru via API
           curl -s "https://api.github.com/users/jidai01/events/public" | \
           jq -r '.[:5] | .[] | "- \(.type | sub("Event$"; "")) di [\(.repo.name)](https://github.com/\(.repo.name)) (\(.created_at | split("T")[0]))"' > activity.txt
-
-          # Ambil tanggal hari ini
           echo "DATE=$(date +'%d %B %Y')" >> $GITHUB_ENV
 
       - name: Write to README using Python
@@ -28,36 +24,30 @@ jobs:
           python3 << 'EOF'
           import os
 
-          # Baca data aktivitas
           activity_content = "*Belum ada aktivitas terbaru.*"
           if os.path.exists('activity.txt'):
               with open('activity.txt', 'r') as f:
                   content = f.read().strip()
-                  if content:
-                      activity_content = content
+                  if content: activity_content = content
 
-          # Baca README
           with open('README.md', 'r') as f:
               readme = f.read()
 
-          # Update Aktivitas
-          start_act = ""
-          end_act = ""
+          # Update Aktivitas - Tag ini harus ada di README
+          start_act, end_act = "", ""
           if start_act in readme and end_act in readme:
               before = readme.split(start_act)[0]
               after = readme.split(end_act)[1]
               readme = f"{before}{start_act}\n{activity_content}\n{end_act}{after}"
 
-          # Update Tanggal
+          # Update Tanggal - Tag ini harus ada di README
           date_now = os.environ.get('DATE', 'Unknown Date')
-          start_date = ""
-          end_date = ""
+          start_date, end_date = "", ""
           if start_date in readme and end_date in readme:
               before = readme.split(start_date)[0]
               after = readme.split(end_date)[1]
               readme = f"{before}{start_date}\n<i>Last updated on: {date_now}</i>\n{end_date}{after}"
 
-          # Simpan kembali
           with open('README.md', 'w') as f:
               f.write(readme)
           EOF
