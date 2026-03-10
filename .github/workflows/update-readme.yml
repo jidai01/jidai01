@@ -1,11 +1,12 @@
-name: Update README Activity
+name: Recent Activity
 on:
   schedule:
-    - cron: "0 * * * *" # Berjalan otomatis setiap jam
-  workflow_dispatch: # Memungkinkan kamu menjalankan manual jika ingin
+    - cron: "0 * * * *" # Update setiap jam
+  workflow_dispatch: # Tombol manual
 
 jobs:
-  build:
+  update-readme:
+    name: Update Activity
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,5 +16,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          COMMIT_MSG: "Update recent activity in README"
+          COMMIT_MSG: "⚡ Update recent activity"
           MAX_LINES: 5
