@@ -56,7 +56,7 @@
 
 ### 🕒 Recent Activity
 
-## _Belum ada aktivitas terbaru yang terdeteksi (Pastikan GitHub Actions sudah aktif)._
+<!-- ## _Belum ada aktivitas terbaru yang terdeteksi (Pastikan GitHub Actions sudah aktif)._ -->
 
 ### 📁 Featured Projects
 
