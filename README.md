@@ -55,7 +55,7 @@
 
 ---
 
-### 🕒 Recent Activity
+### 🕒 activity
 
 ---
 
