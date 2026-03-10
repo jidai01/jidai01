@@ -13,25 +13,54 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Fetch GitHub Activity & Update README
+      - name: Fetch and Process Activity
+        id: process
         run: |
-          # 1. Ambil data aktivitas publik jidai01
-          # Kita ambil 5 event terbaru dan ubah jadi list markdown
-          ACTIVITY=$(curl -s "https://api.github.com/users/jidai01/events/public" | \
-          jq -r '.[:5] | .[] | "- \(.type | sub("Event$"; "")) di [\(.repo.name)](https://github.com/\(.repo.name)) (\(.created_at | split("T")[0]))"' | \
-          sed ':a;N;$!ba;s/\n/\\n/g')
+          # Ambil 5 aktivitas terbaru via API
+          curl -s "https://api.github.com/users/jidai01/events/public" | \
+          jq -r '.[:5] | .[] | "- \(.type | sub("Event$"; "")) di [\(.repo.name)](https://github.com/\(.repo.name)) (\(.created_at | split("T")[0]))"' > activity.txt
 
-          # 2. Update bagian Aktivitas menggunakan penanda baru
-          sed -i "//,//c\\n$ACTIVITY\n" README.md
+          # Ambil tanggal hari ini
+          echo "DATE=$(date +'%d %B %Y')" >> $GITHUB_ENV
 
-          # 3. Update bagian Tanggal
-          DATE=$(date +'%d %B %Y')
-          sed -i "//,//c\\n<i>Last updated on: $DATE<\/i>\n" README.md
+      - name: Write to README using Python
+        run: |
+          import os
+
+          # Baca data aktivitas
+          with open('activity.txt', 'r') as f:
+              activity_content = f.read().strip()
+          if not activity_content:
+              activity_content = "*Belum ada aktivitas terbaru.*"
+
+          # Baca README
+          with open('README.md', 'r') as f:
+              readme = f.read()
+
+          # Update Aktivitas
+          start_act = ""
+          end_act = ""
+          if start_act in readme and end_act in readme:
+              before = readme.split(start_act)[0]
+              after = readme.split(end_act)[1]
+              readme = f"{before}{start_act}\n{activity_content}\n{end_act}{after}"
+
+          # Update Tanggal
+          date_now = os.environ['DATE']
+          start_date = ""
+          end_date = ""
+          if start_date in readme and end_date in readme:
+              before = readme.split(start_date)[0]
+              after = readme.split(end_date)[1]
+              readme = f"{before}{start_date}\n<i>Last updated on: {date_now}</i>\n{end_date}{after}"
+
+          # Simpan kembali
+          with open('README.md', 'w') as f:
+              f.write(readme)
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          # Hanya commit jika ada perubahan agar tidak error
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: manual update activity and date" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update activity and date" && git push)
