@@ -3,16 +3,18 @@ on:
   schedule:
     - cron: "0 * * * *"
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Izin khusus untuk menulis ke repo
+      contents: write
     steps:
       - uses: actions/checkout@v3
         with:
           persist-credentials: true
 
+      # Langkah 1: Tetap pakai 'uses' karena ini cara termudah ambil data aktivitas
       - name: Update Recent Activity
         uses: jamesgeorge007/github-activity-readme@master
         env:
@@ -21,14 +23,18 @@ jobs:
           COMMIT_MSG: "⚡ Update recent activity"
           MAX_LINES: 5
 
+      # Langkah 2: Memperbaiki skrip tanggal yang tadi kosong/rusak
       - name: Update Last Updated Date
         run: |
           DATE=$(date +'%d %B %Y')
+          # Mengganti teks di antara tag penanda dengan tanggal baru
           sed -i "//,//c\\n<i>Last updated on: $DATE<\/i>\n" README.md
 
+      # Langkah 3: Push semua perubahan (Aktivitas + Tanggal)
       - name: Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update readme" && git push)
+          # Hanya push jika ada perubahan (mencegah error 'nothing to commit')
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update activity and date" && git push)
