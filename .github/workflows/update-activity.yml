@@ -15,9 +15,11 @@ jobs:
 
       - name: Fetch and Process Activity
         run: |
-          # Mengambil data dan memformatnya
+          # Ambil 5 aktivitas terbaru via API
           curl -s "https://api.github.com/users/jidai01/events/public" | \
           jq -r '.[:5] | .[] | "- \(.type | sub("Event$"; "")) di [\(.repo.name)](https://github.com/\(.repo.name)) (\(.created_at | split("T")[0]))"' > activity.txt || echo "" > activity.txt
+
+          # Simpan tanggal hari ini
           echo "DATE=$(date +'%d %B %Y')" >> $GITHUB_ENV
 
       - name: Write to README using Python
@@ -25,7 +27,7 @@ jobs:
           python3 << 'EOF'
           import os
 
-          # Definisikan Tag Penanda
+          # Definisikan Tag Penanda (Wajib sesuai dengan di README.md)
           START_ACT, END_ACT = "", ""
           START_DATE, END_DATE = "", ""
 
@@ -37,6 +39,10 @@ jobs:
                   if content: activity_content = content
 
           # Baca README
+          if not os.path.exists('README.md'):
+              print("README.md tidak ditemukan!")
+              exit(1)
+
           with open('README.md', 'r') as f:
               readme = f.read()
 
@@ -46,7 +52,7 @@ jobs:
               after_parts = parts[1].split(END_ACT)
               readme = parts[0] + START_ACT + "\n" + activity_content + "\n" + END_ACT + after_parts[1]
           else:
-              print("Tag Aktivitas tidak ditemukan!")
+              print("Tag Aktivitas tidak ditemukan di README!")
 
           # Update Tanggal
           date_now = os.environ.get('DATE', 'Unknown Date')
@@ -55,7 +61,7 @@ jobs:
               after_parts = parts[1].split(END_DATE)
               readme = parts[0] + START_DATE + "\n<i>Last updated on: " + date_now + "</i>\n" + END_DATE + after_parts[1]
 
-          # Simpan
+          # Simpan hasil akhir
           with open('README.md', 'w') as f:
               f.write(readme)
           EOF
